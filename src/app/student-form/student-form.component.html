@@ -1,0 +1,62 @@
+<h4 class="text-center">Student Admission Form</h4>
+<form novalidate [formGroup]="f">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control border" formControlName="name" id="name" [ngClass]="{
+      'border-danger': name.invalid && (name.dirty || name.touched)
+    }">
+    <div class="text-danger"
+         *ngIf="name.errors && (name.dirty || name.touched)">
+      <p *ngIf="name.errors.required">Name is required</p>
+      <p *ngIf="name.errors.pattern">The Name must contain only alphabets</p>
+      <p *ngIf="name.errors.maxLength">The Name must be less than 20 characters</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control border" formControlName="lastName" id="lastName" [ngClass]="{
+      'border-danger': lastName.invalid && (lastName.dirty || lastName.touched)
+    }">
+    <div class="text-danger"
+         *ngIf="lastName.errors && (lastName.dirty || lastName.touched)">
+      <p *ngIf="lastName.errors.required">Last Name is required</p>
+      <p *ngIf="lastName.errors.pattern">The Last Name must contain only alphabets</p>
+      <p *ngIf="lastName.errors.maxLength">The Last Name must be less than 20 characters</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="class">Class</label>
+    <input type="text" class="form-control border" formControlName="class" id="class" [ngClass]="{
+      'border-danger': class.invalid && (class.dirty || class.touched)
+    }">
+    <div class="text-danger"
+         *ngIf="class.errors && (class.dirty || class.touched)">
+      <p *ngIf="class.errors.required">class is required</p>
+      <p *ngIf="class.errors.pattern">The class must contain only alphabets and numbers</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="passYear">Year of Passing</label>
+    <input type="text" class="form-control border" formControlName="passYear" id="passYear" [ngClass]="{
+      'border-danger': passYear.invalid && (passYear.dirty || passYear.touched)
+    }">
+    <div class="text-danger"
+         *ngIf="passYear.errors && (passYear.dirty || passYear.touched)">
+      <p *ngIf="passYear.errors.required">Year of Passing is required</p>
+      <p *ngIf="passYear.errors.pattern">The Year of Passing address contain only numbers</p>
+      <p *ngIf="passYear.errors.passYear">{{passYear.errors.passYear}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="per">Percentage</label>
+    <input type="text" class="form-control border" formControlName="per" id="per" [ngClass]="{
+      'border-danger': per.invalid && (per.dirty || per.touched)
+    }">
+    <div class="text-danger"
+         *ngIf="per.errors && (per.dirty || per.touched)">
+      <p *ngIf="per.errors.required">Percentage is required</p>
+      <p *ngIf="per.errors.pattern">The Percentage address must contain only numbers</p>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [attr.disabled]="f.invalid ? true : null">Submit</button>
+</form>

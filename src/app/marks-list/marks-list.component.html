@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="4">Students​ ​Result​ ​Board</th>
+    </tr>
+    <tr>
+      <th scope="col"><i>Student​ ​Name</i></th>
+      <th scope="col"><i>Roll​ ​Number</i></th>
+      <th scope="col"><i>Total​ ​Marks</i></th>
+      <th scope="col"><i>Status</i></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of marks" [ngClass]="{'fail': row.status === 0, 'topper': row.status === 2}">
+      <th>{{row.name}}</th>
+      <td>{{row.rollNumber}}</td>
+      <td>{{row.total}}</td>
+      <td>{{status[row.status]}}</td>
+    </tr>
+  </tbody>
+</table>

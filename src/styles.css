@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #efefef;
+}
+
+tr.fail {
+    background-color: #e74c3c;
+}
+
+tr.topper {
+    background-color: #2ecc71;
+}
+
+tr.fail td,
+tr.topper td {
+    color: #fff;
+}
